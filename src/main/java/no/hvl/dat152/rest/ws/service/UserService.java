@@ -22,6 +22,8 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private OrderService orderService;
 	
 	public User saveUser(User user) {
 		
@@ -76,10 +78,14 @@ public class UserService {
 		
 		// TODO
 		
+		Order o1 = orderService.saveOrder(order);
 		User user = findUser(id);
+		
 		Set<Order> orders = user.getOrders();
-		orders.add(order);
+		
+		orders.add(o1);
 		user.setOrders(orders);
+		
 		updateUser(user, id);
 		
 		return user;
