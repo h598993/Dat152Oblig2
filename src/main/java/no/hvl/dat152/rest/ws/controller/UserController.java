@@ -105,7 +105,6 @@ public class UserController {
 		// TODO
 		
 		userService.createOrdersForUser(id, order);
-		
 		return new ResponseEntity<>(userService.findUser(id),HttpStatus.CREATED);
 	}
 	
