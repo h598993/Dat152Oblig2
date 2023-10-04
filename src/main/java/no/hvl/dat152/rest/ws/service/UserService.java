@@ -76,6 +76,12 @@ public class UserService {
 		
 		// TODO
 		
-		return null;
+		User user = findUser(id);
+		Set<Order> orders = user.getOrders();
+		orders.add(order);
+		user.setOrders(orders);
+		updateUser(user, id);
+		
+		return user;
 	}
 }

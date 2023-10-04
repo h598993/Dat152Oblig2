@@ -104,7 +104,9 @@ public class UserController {
 		
 		// TODO
 		
-		return null;
+		userService.createOrdersForUser(id, order);
+		
+		return new ResponseEntity<>(userService.findUser(id),HttpStatus.CREATED);
 	}
 	
 	private void addLinks(Set<Order> orders) throws OrderNotFoundException {
