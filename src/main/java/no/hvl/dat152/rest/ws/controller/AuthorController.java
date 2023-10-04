@@ -41,6 +41,7 @@ public class AuthorController {
 
 			return new ResponseEntity<>(authors, HttpStatus.OK);
 		} else
+			//Dette er en stor test
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
