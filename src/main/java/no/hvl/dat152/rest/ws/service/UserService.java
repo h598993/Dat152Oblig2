@@ -33,13 +33,20 @@ public class UserService {
 	public void deleteUser(Long id) throws UserNotFoundException {
 		
 		// TODO
+		User user = findUser(id);
+		userRepository.delete(user);
 	}
 	
 	public User updateUser(User user, Long id) throws UserNotFoundException {
 		
 		// TODO
 		
-		return null;
+		User usertoUpdate = findUser(id);
+		long id1 = usertoUpdate.getUserid();
+		user.setUserid(id1);
+		userRepository.save(user);
+		
+		return user;
 		
 	}
 	
