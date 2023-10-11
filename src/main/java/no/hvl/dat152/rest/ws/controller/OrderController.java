@@ -50,7 +50,7 @@ public class OrderController {
 		
 		// TODO
 		
-		return null;
+		return new ResponseEntity<>(orderService.findAllOrders(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/orders/{id}")
