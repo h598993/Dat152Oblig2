@@ -69,6 +69,10 @@ public class OrderService {
 		
 		// TODO
 		
-		return null;			
+		 Order orderToUpdate = findOrder(id);
+		 
+		 order.setId(orderToUpdate.getId());
+		
+		return orderRepository.save(order);			
 	}
 }
