@@ -83,6 +83,8 @@ public class OrderController {
 		
 		// TODO
 		
+		orderService.deleteOrder(id);
+		
 		return new ResponseEntity<>("Order with id: '"+id+"' deleted!", HttpStatus.OK);
 	}
 	

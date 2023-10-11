@@ -34,6 +34,7 @@ public class OrderService {
 	public void deleteOrder(Long id) throws OrderNotFoundException {
 
 		// TODO
+		orderRepository.delete(orderRepository.getReferenceById(id));
 	}
 	
 	public List<Order> findAllOrders(){
