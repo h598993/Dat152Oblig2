@@ -61,7 +61,7 @@ public class AuthorController {
 
 		Author a1 = authorservice.saveAuthor(author);
 
-		return new ResponseEntity<>(a1, HttpStatus.OK);
+		return new ResponseEntity<>(a1, HttpStatus.CREATED);
 	}
 
 	@PutMapping("/authors/{id}")
